@@ -135,6 +135,12 @@ oyente的入口函数，其可以通过接收以下类型的输入来分析智�
 
 ## 运行测试
 
-当前问题：make hv6-verify出错
+`make hv6-verify`终于运行成功了，系统开始了证明。后续可以考虑修改一下kernal源码重写编译测试正确性。
+![image](./pics/hyper2.png)
 
-进展：目前已经调整到自己的环境中和同学给出的docker中是一样的错误了，环境应该是没有问题。
+之前存在的问题：使用自己编译的llvm，make install安装之后的binary是带有版本号的，如llvm-6.0这样，在程序中使用会出错。
+
+解决方法有两种：
+
+- 使用apt-get install llvm进行安装
+- 手动为llvm增加软连接到带版本的binary，并添加到环境变量
