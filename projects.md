@@ -109,6 +109,30 @@ oyente的入口函数，其可以通过接收以下类型的输入来分析智�
 
 1. 安装LLVM
 
+- 下载llvm
+
+`svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm`
+
+- 下载compile-rt
+
+`cd llvm/projetcs`
+
+`svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt `
+ 
+- 下载libcxxx/libxxabi
+
+`svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx  `
+
+`svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi`
+
+- 新建一个build文件夹，配置编译参数并安装
+
+`cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../llvm`
+
+`make -j5`
+
+`sudo make install`
+
 ## 运行测试
 
 当前问题：make hv6-verify出错
