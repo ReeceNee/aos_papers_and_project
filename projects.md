@@ -92,3 +92,23 @@ oyente的入口函数，其可以通过接收以下类型的输入来分析智�
 分析从函数*build_cfg_and_analyze()*开始，并使用python原生的tokenize模块对二进制文件进行分割。*collect_vertices* 和 *construct_bb*函数用于识别程序中的基本块，并以图的形式记录。基本块的识别主要是用过查找```JUMPDEST```、 ```STOP```、 ```RETURN```、 ```SUICIDE```、 ```JUMP``` 和 ```JUMPI```等跳转指令。每个基本块都是一个*BasicBlock*实例，这个对象定义在*Basicblock.py*中。
 
 在创建基本块之后，用*full_sym_exec*函数符号化地执行每个基本块。执行的过程为获取每个基本块中的指令，并通过*sym_exec_ins*函数依次模拟执行。在这个函数中，作者每个操作码与在以太坊黄皮书中描述的行为进行了模拟实现。
+
+# Project2：Hyperkernal1
+
+## 简介
+ 
+项目地址：https://github.com/chyyuu/hv6
+
+## 实验环境
+
+实验环境采用如下的软硬件配置：
+- 硬件：Intel i7 8550U/16GB RAM
+- 操作系统：Ubuntu 18.04 LTS
+
+搭建依赖环境
+
+1. 安装LLVM
+
+## 运行测试
+
+当前问题：make hv6-verify出错
